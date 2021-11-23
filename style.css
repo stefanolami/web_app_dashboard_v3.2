@@ -1,0 +1,79 @@
+
+html {
+    font-family: 'M PLUS 2', sans-serif;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+p {
+    font-size: 12px;
+}
+
+header {
+    margin: 0;
+    display: grid;
+    background-color:  #5a58b3;
+    color: white;
+    grid-template-columns: 40% 1fr 1fr 30%;
+    align-items: center;
+    justify-items: center;
+}
+
+header h1,
+header p {
+    justify-self: start;
+    padding-left: 5px;
+}
+
+nav {
+    display: grid;
+    background-color: #3b3a68;
+    grid-template-columns: repeat(4, 18%);
+    justify-items: center;
+    justify-content: center;
+}
+
+nav svg {
+    fill: white;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.bell {
+    border-right: 1px solid white;
+    fill: white;
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+}
+
+.searchbox {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    height: 50px;
+}
+
+label {
+    place-self: center;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+input {
+    border: 1px solid lightgray;
+    border-radius: 0;
+    background-color:  #f4f6f6;
+}
+
+
+
