@@ -19,12 +19,11 @@ notBtn.addEventListener('click', () => {
     }
 })
 
-let hourlyChart = document.getElementById('hourly-chart').getContext('2d');
-const hourlyBtn = document.querySelector('.hourly');
+let lineChart = document.getElementById('line-chart').getContext('2d');
+const chartsNav = document.querySelector('.charts-nav');
 
-hourlyBtn.addEventListener('click', () => {
-
-    let hourlyChartFunc = new Chart(hourlyChart, {
+function hourlyChartFunc() {
+    let hourlyChart = new Chart(lineChart, {
         type: 'line',
         data: {
             labels: ['0-4', '4-8', '8-12', '12-16', '16-20', '20-24'],
@@ -52,6 +51,67 @@ hourlyBtn.addEventListener('click', () => {
             }
         }
     })
+    return hourlyChart;
+}
+
+function dailyChartFunc() {
+    let dailyChart = new Chart(lineChart, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: '',
+                data: [
+                    272,
+                    231,
+                    254,
+                    232,
+                    267,
+                    162,
+                    89
+                ],
+                backgroundColor: '#7b79f7',
+                borderColor: '#3b3a68',
+                fill: true
+            },
+            ]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    })
+}
+
+/* hourlyChartFunc(); */
+
+chartsNav.addEventListener('click', (e) => {
+    const btn = e.target;
+    const btns = document.querySelectorAll('.charts-nav button');
+    const canvas = document.querySelector('#line-chart');
+    
+    if (btn.className === 'hourly') {
+        for (i = 0; i < btns.length; i++) {
+            btns[i].style.backgroundColor = 'white';
+            btns[i].style.color = 'black';
+        }
+        
+        btn.style.backgroundColor = 'rgb(130, 230, 130)';
+        btn.style.color = 'white';
+        canvas.innerHTML = hourlyChartFunc();
+    } else if (btn.className === 'daily') {
+        for (i = 0; i < btns.length; i++) {
+            btns[i].style.backgroundColor = 'white';
+            btns[i].style.color = 'black';
+        }
+        
+        btn.style.backgroundColor = 'rgb(130, 230, 130)';
+        btn.style.color = 'white';
+        dailyChartFunc();
+    }
 
 })
 
