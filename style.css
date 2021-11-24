@@ -3,14 +3,7 @@ html {
     font-family: 'M PLUS 2', sans-serif;
 }
 
-h1 {
-    font-weight: 400;
-    font-size: 20px;
-}
-
-p {
-    font-size: 12px;
-}
+/* HEADER */
 
 header {
     margin: 0;
@@ -22,12 +15,81 @@ header {
     justify-items: center;
 }
 
+h1 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+p {
+    font-size: 12px;
+}
+
 header h1,
 header p {
     justify-self: start;
     padding-left: 5px;
 }
 
+.profile-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.bell {
+    border-right: 1px solid white;
+    fill: white;
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    transition: fill .5s;   
+}
+
+.bell:hover {
+    fill: rgb(79, 236, 79);
+}
+
+.bell-btn {
+    background-color: inherit;
+    border: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    border-radius: 4px;
+    background-color: #7b79f7;
+    list-style: none;
+    color: white;
+    width: 40vw;
+    padding: 5px;
+    margin: 0;
+    text-align: left;
+}
+
+.dropdown li {
+    margin: 5px;
+}
+
+.notification-icon {
+    position: absolute;
+    top: 15%;
+    right: 35%;
+    border-radius: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: rgb(130, 230, 130);   
+}
+
+/* NAVIGATION MENU */
+ 
 nav {
     display: grid;
     background-color: #3b3a68;
@@ -43,19 +105,7 @@ nav svg {
     height: 30px;
 }
 
-.profile-img {
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-}
-
-.bell {
-    border-right: 1px solid white;
-    fill: white;
-    width: 20px;
-    height: 20px;
-    padding: 8px;
-}
+/* SEARCHBAR */
 
 .searchbox {
     display: grid;
@@ -75,5 +125,60 @@ input {
     background-color:  #f4f6f6;
 }
 
+/* ALERT */
 
+.alert {
+    display: grid;
+    grid-template-columns: 1 fr 1fr;
+    background-color: #5a58b3;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    justify-content: space-between;
+    grid-template-areas: 'text btn';
+    align-items: center;
+}
 
+.close-btn {
+    width: 15px;
+    height: 15px;
+    background-color: inherit;
+    border: none;
+    color: white;
+    grid-area: btn;
+}
+.alert p {
+    color: white;
+    grid-area: text;
+    margin: 0;
+}
+
+/* CHARTS NAVIGATION MENU */
+ 
+h2 {
+    font-weight: 500;
+    font-size: 18px; 
+}
+
+.charts-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 1rem;
+}
+
+.charts-nav button {
+    border: 1px solid white;
+    background-color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.active {
+    background-color: rgb(130, 230, 130);
+    border-radius: 10px;
+    border: 1px solid rgb(130, 230, 130);
+}
+
+#hourly-chart {
+    display: hidden;
+}
