@@ -157,7 +157,7 @@ input {
  
 h2 {
     font-weight: 500;
-    font-size: 18px; 
+    font-size: 16px; 
 }
 
 .charts-nav {
@@ -166,20 +166,99 @@ h2 {
     margin-bottom: 1rem;
 }
 
-.charts-nav button {
-    border: 1px solid white;
+.daily,
+.weekly,
+.monthly {
+    border: none;
     background-color: white;
     font-weight: 600;
     border-radius: 15px;
     height: 30px;
 }
 
-.active {
+.hourly {
     background-color: rgb(130, 230, 130);
-    border-radius: 10px;
-    border: 1px solid rgb(130, 230, 130);
+    border-radius: 15px;
+    border: none;
+    color: white;
 }
 
 canvas {
-    display: none;
+    margin: 0;
+    padding: 15px;
+    border-bottom: 1px solid lightgray;
+}
+
+/* social stats */
+
+.social div {
+    display: grid;
+    grid-template-columns: 1fr 70%;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color:  #f4f6f6;
+    margin-bottom: 10px;
+    max-height: 100px;
+}
+
+.social div svg {
+    width: 40px;
+    height: 40px;
+    fill: #7b79f7;
+    place-self: center; 
+}
+
+.social-numbers {
+    font-size: 35px;
+    color: rgb(104, 104, 104);
+    font-weight: 400;
+}
+
+h3 {
+    margin: 10px;;
+    color: #7b79f7;
+}
+
+.social {
+    border-bottom: 1px solid lightgray;
+}
+
+/* new members / recent activity */
+
+.new-members div,
+.recent-activity div {
+    border-bottom: 1px solid lightgray;
+    display: grid;
+    grid-template-rows: 60% 1fr;
+    justify-items: center;
+    text-align: center;
+    min-height: 140px;
+}
+
+.new-members img,
+.recent-activity img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    align-self: end;
+}
+
+.new-members p,
+.recent-activity p {
+    align-self: start;
+    margin-top: 0;
+}
+
+.recent-activity p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mail {
+    color: #7b79f7
+}
+
+.activities {
+    font-weight: 500;
 }
