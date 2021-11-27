@@ -182,11 +182,13 @@ let myPieChart = new Chart(pieChart, {
     }
 })
 
-/* searchbox */
+/* message user */
 
 const members = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
 const userSearch = document.querySelector('.user-searchbox');
 const searchList = document.querySelector('.search-list');
+const message = document.querySelector('.message');
+const submit = document.querySelector('.send');
 let suggestions = [];
 
 function removeSuggestions() {
@@ -230,3 +232,15 @@ searchList.addEventListener('click', (e) => {
 })
 
 
+
+
+/* submit.addEventListener('click', () => {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = 'alert';
+    if (message.value && members.includes(userSearch.value)) {
+        
+    } else {
+        alert('You need to select a user and write a message')
+    }
+})
+ */

@@ -113,7 +113,7 @@ nav svg {
     height: 50px;
 }
 
-label {
+.dashboard {
     place-self: center;
     font-weight: 500;
     font-size: 18px;
@@ -158,7 +158,6 @@ input {
 h2 {
     font-weight: 500;
     font-size: 16px; 
-    padding-left: 10px;
 }
 
 .charts-nav {
@@ -181,6 +180,7 @@ h2 {
     background-color: rgb(130, 230, 130);
     border-radius: 15px;
     border: none;
+    font-weight: 600;
     color: white;
 }
 
@@ -312,4 +312,44 @@ h3 {
     border: 1px solid lightgray;
     border-radius: 5px;
     display: none;
+}
+
+/* settings */
+
+.settings-form {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    min-height: 100px;
+}
+
+/* input[type="checkbox"] {
+    position: relative;
+    width: 80px;
+    height: 30px;
+    -webkit-appearance: none;
+    background: lightgray;
+    border-radius: 20px;
+    transition: .5s;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+}
+
+input:checked[type="checkbox"] {
+    background-color: #7b79f7;
+}
+
+input[type="checkbox"]:before {
+    content: 'ON';
+    position: absolute;
+    width: 30px;
+    height:30px;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+    background-color: white;
+} */
+
+.settings-form label {
+    display: grid;
+    grid-template-columns: 1fr 1fr;;
 }
