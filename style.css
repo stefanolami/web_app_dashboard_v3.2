@@ -158,6 +158,7 @@ input {
 h2 {
     font-weight: 500;
     font-size: 16px; 
+    padding-left: 10px;
 }
 
 .charts-nav {
@@ -261,4 +262,54 @@ h3 {
 
 .activities {
     font-weight: 500;
+}
+
+/* message user */
+
+.message-form {
+    display: grid;
+    grid-template-rows: 1fr 60% 1fr;
+}
+
+.message,
+.user-searchbox {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color:  #f4f6f6;
+    margin-bottom: 15px;
+    font-family: 'M PLUS 2', sans-serif;
+}
+
+.send {
+    height: 50px;
+    border-radius: 5px;
+    background-color: #7b79f7;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.message-user {
+    border-bottom: 1px solid lightgray;
+}
+
+.message::placeholder,
+.user-searchbox::placeholder {
+    padding: 8px;
+}
+
+.message-form {
+    position: relative;
+}
+
+.search-list {
+    list-style-type: none;
+    position: absolute;
+    top: 35px;
+    z-index: 1;
+    background-color: white;
+    width: 96%;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: none;
 }

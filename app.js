@@ -181,3 +181,52 @@ let myPieChart = new Chart(pieChart, {
         }
     }
 })
+
+/* searchbox */
+
+const members = ['Victoria Chambers', 'Dale Byrd', 'Dawn Wood', 'Dan Oliver'];
+const userSearch = document.querySelector('.user-searchbox');
+const searchList = document.querySelector('.search-list');
+let suggestions = [];
+
+function removeSuggestions() {
+    while (searchList.firstChild) {
+        searchList.removeChild(searchList.firstChild);
+    }
+    searchList.style.display = 'none';
+}
+
+userSearch.addEventListener('input', (e) => {
+    
+    let userInput = e.target.value.toLowerCase();
+    
+    removeSuggestions();
+
+    suggestions = members.map((name) => {
+        if (name.toLocaleLowerCase().includes(userInput)) {
+            return name;
+        }
+    } );
+
+    for (i = 0; i < suggestions.length; i++) {
+        let newLi = document.createElement('li');
+        newLi.textContent = suggestions[i];
+        searchList.append(newLi);
+        searchList.style.display = 'inline-block';
+    }
+
+    if (userInput === '') {
+        removeSuggestions();
+    }
+
+
+})
+
+searchList.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+        userSearch.value = e.target.textContent;
+        searchList.style.display = 'none';
+    }
+})
+
+
