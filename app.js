@@ -281,6 +281,6 @@ save.addEventListener('click', (e) => {
 cancel.addEventListener('click', (e) => {
     localStorage.removeItem(notifications.name);
     localStorage.removeItem(public.name);
-    localStorage.removeItem(timezone.name);
+    localStorage.setItem(timezone.name, 'none');
     location.reload();
 })

@@ -130,7 +130,7 @@ input {
 
 .alert {
     display: grid;
-    grid-template-columns: 1 fr 1fr;
+    grid-template-columns: 80% 1fr;
     background-color: #5a58b3;
     padding: 10px;
     border-radius: 5px;
@@ -147,6 +147,7 @@ input {
     border: none;
     color: white;
     grid-area: btn;
+    justify-self: end;
 }
 .alert p {
     color: white;
@@ -424,7 +425,7 @@ input:checked[type="checkbox"]::before {
 .save,
 .cancel {
     width: 140px;
-    height: 45px;
+    height: 50px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -472,8 +473,7 @@ input:checked[type="checkbox"]::before {
         grid-area: main;
         display: grid;
         grid-template-columns: 50% 50%;
-       /*  grid-template-rows: 50px 80px 500px 250px 170px 400px 400px 300px 350px; */
-       grid-template-rows: 50px 80px minmax(1fr, 515px) 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 80px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: 
             'search search'
             'alert alert'
@@ -616,6 +616,10 @@ input:checked[type="checkbox"]::before {
     .cancel {
         width: 98%;
     }
+
+    .dropdown {
+        width: 20vw;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -645,9 +649,17 @@ input:checked[type="checkbox"]::before {
         border-bottom: none;
     }
 
-    .settings-form,
+    .settings,
     .message-user {
-        min-height: 180px;
+        max-height: 350px;
+    }
+
+    .settings {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
     }
     
+    .message {
+        max-height: 140px;
+    }
 }
