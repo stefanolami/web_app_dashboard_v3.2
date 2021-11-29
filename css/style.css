@@ -473,7 +473,7 @@ input:checked[type="checkbox"]::before {
         grid-area: main;
         display: grid;
         grid-template-columns: 50% 50%;
-        grid-template-rows: 50px 80px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 80px minmax(1fr, 515px) 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: 
             'search search'
             'alert alert'
