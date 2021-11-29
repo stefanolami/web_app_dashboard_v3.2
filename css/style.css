@@ -43,6 +43,7 @@ header p {
     height: 20px;
     padding: 8px;
     transition: fill .5s;   
+    cursor: pointer;
 }
 
 .bell:hover {
@@ -85,7 +86,7 @@ header p {
     border-radius: 50%;
     width: 6px;
     height: 6px;
-    background-color: rgb(130, 230, 130);   
+    background-color: rgb(130, 230, 130);
 }
 
 /* NAVIGATION MENU */
@@ -190,6 +191,11 @@ h2 {
 canvas {
     margin: 0;
     padding: 15px;
+}
+
+.line-charts,
+.bar-chart,
+.pie-chart {
     border-bottom: 1px solid lightgray;
 }
 
@@ -230,14 +236,31 @@ h3 {
 
 /* new members / recent activity */
 
-.new-members div,
-.recent-activity div {
+.new-members,
+.recent-activity {
     border-bottom: 1px solid lightgray;
+}
+
+.new-members div {
+    display: grid;
+    grid-template-rows: 60% 25% 15%;
+    justify-items: center;
+    text-align: center;
+    min-height: 140px;
+    font-size: 12px;
+}
+
+.recent-activity div {
     display: grid;
     grid-template-rows: 60% 1fr;
     justify-items: center;
     text-align: center;
     min-height: 140px;
+    font-size: 12px;
+}
+
+.bordered-div {
+    border-bottom: 1px solid lightgray;
 }
 
 .new-members img,
@@ -289,6 +312,7 @@ h3 {
     background-color: #7b79f7;
     color: white;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .message-user {
@@ -403,6 +427,7 @@ input:checked[type="checkbox"]::before {
     height: 45px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .save {
@@ -429,6 +454,7 @@ input:checked[type="checkbox"]::before {
         grid-template-areas: 
             'header header'
             'nav main';
+        font-size: 18px; 
     }
 
     header {
@@ -444,17 +470,184 @@ input:checked[type="checkbox"]::before {
 
     main {
         grid-area: main;
+        display: grid;
+        grid-template-columns: 50% 50%;
+       /*  grid-template-rows: 50px 80px 500px 250px 170px 400px 400px 300px 350px; */
+       grid-template-rows: 50px 80px minmax(1fr, 515px) 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            'search search'
+            'alert alert'
+            'line line'
+            'bar pie'
+            'social social'
+            'members members'
+            'activities activities'
+            'message message'
+            'settings settings';
     }
 
     .searchbox {
         grid-template-columns: 1fr 80%;
+        grid-area: search;
     }
 
     .alert {
         margin: 15px;
+        grid-area: alert;
     }
+
+    
 
     .line-charts {
         padding: 15px;
+        padding-bottom: 0;
+        grid-area: line;
+        display: grid;
+        grid-template-columns: 60% 1fr;
+        grid-template-rows: 50px 1fr;
+        grid-template-areas: 
+            'traffic charts-nav'
+            'line line';
+        align-items: center;
     }
+
+    .line-charts h2 {
+        grid-area: traffic;
+        margin-top: 0;
+    }
+
+    .charts-nav {
+        grid-area: charts-nav;
+    }
+
+    #line-chart {
+        grid-area: line;
+    }
+
+    .bar-chart {
+        border-right: 1px solid lightgray;
+        padding: 15px;
+        grid-area: bar;
+    }
+
+    #bar-chart {
+        height: 220px;
+    }
+
+    .pie-chart {
+        padding: 15px;
+        grid-area: pie;
+    }
+
+    #pie-chart {
+        max-height: 200px;
+    }
+
+    .social {
+        padding: 15px;
+        grid-area: social;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 35px 1fr;
+        grid-gap: 8px;
+    }
+
+    .social h2 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        margin: 0;
+    }
+
+    .new-members {
+        padding: 15px;
+        grid-area: members;
+    }
+
+    .new-members div {
+        grid-template-columns: 1fr 70% 1fr;
+        grid-template-rows: 1fr;
+        align-items: center;
+        min-height: 80px;
+        font-size: 14px;
+    }
+
+    .new-members img,
+    .recent-activity img {
+        align-self: center;
+    }
+
+    .new-members p,
+    .recent-activity p {
+        align-self: center;
+        justify-self: start;
+        text-align: left;
+        font-size: 14px;
+        padding-left: 0;
+    }
+
+    .recent-activity {
+        padding: 15px;
+        grid-area: activities;
+    }
+
+    .recent-activity div {
+        grid-template-columns: 1fr 85%;
+        grid-template-rows: 1fr;
+        min-height: 80px;
+        font-size: 14px;
+    }
+
+    .message-user {
+        padding: 15px;
+        grid-area: message;
+    }
+
+    .settings {
+        padding: 15px;
+        grid-area: settings;
+    }
+
+    .settings-form {
+        grid-template-columns: 30% 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .save,
+    .cancel {
+        width: 98%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    main {
+       grid-template-rows: 50px 80px minmax(1fr, 910px) 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            'search search'
+            'alert alert'
+            'line line'
+            'bar pie'
+            'social social'
+            'members activities'
+            'message settings';
+    }
+
+    .line-charts {
+        max-height: 1000px;
+        grid-template-columns: 75% 1fr;
+    }
+
+    .new-members {
+        border-right: 1px solid lightgray;
+    }
+
+    .message-user {
+        border-right: 1px solid lightgray;
+        border-bottom: none;
+    }
+
+    .settings-form,
+    .message-user {
+        min-height: 180px;
+    }
+    
 }

@@ -59,7 +59,7 @@
             <p><strong>Alert:</strong> you have unread messages</p>
             <button class='close-btn'><span>&times;</span></button>
         </div>
-        <section class='line-charts'>
+        <section class='line-charts' id='dashboard'>
             <h2>TRAFFIC</h2>
             <div class='charts-nav'>
                 <button class='hourly'>Hourly</button>
@@ -98,42 +98,42 @@
                 <h3>Twitter <br><span class="social-numbers">22,189</span></h3>
             </div>
         </section>
-        <section class="new-members">
+        <section class="new-members" id='members'>
             <h2>NEW MEMBERS</h2>
-            <div>
+            <div class='bordered-div'>
                 <img src='images/member-1.jpg'>
                 <p>Victoria Chambers <br><span class="mail">victoria.chambers80@example.com
-                </span><br>10/15/20</p>
+                </span><br></p><span class="date">10/15/20</span>
             </div>
-            <div>
+            <div class='bordered-div'>
                 <img src='images/member-2.jpg'>
                 <p>Dale Byrd <br><span class="mail">dale.byrd52@example.com
-                </span><br>10/15/20</p>
+                </span><br></p><span class="date">10/15/20</span>
             </div>
-            <div>
+            <div class='bordered-div'>
                 <img src='images/member-3.jpg'>
                 <p>Dawn Wood <br><span class="mail">dawn.wood61@example.com
-                </span><br>10/15/20</p>
+                </span><br></p><span class="date">10/15/20</span>
             </div>
             <div>
                 <img src='images/member-4.jpg'>
                 <p>Dan Oliver <br><span class="mail">dan.oliver82@example.com
-                </span><br>10/15/20</p>
+                </span><br></p><span class="date">10/15/20</span>
             </div>
         </section>
         <section class="recent-activity">
             <h2>RECENT ACTIVITY</h2>
-            <div>
+            <div class='bordered-div'>
                 <img src='images/member-1.jpg'>
                 <p>Victoria Chambers commented on <span class="activities">WebApp's SEO Tips
                 </span><br>4 hours ago</p>
             </div>
-            <div>
+            <div class='bordered-div'>
                 <img src='images/member-2.jpg'>
                 <p>Dale Byrd like the post <span class="activities">Facebook's Changes for 2021
                 </span><br>5 hours ago</p>
             </div>
-            <div>
+            <div class='bordered-div'>
                 <img src='images/member-3.jpg'>
                 <p>Dawn Wood commented on <span class="activities">Facebook's Changes for 2021
                 </span><br>5 hours ago</p>
@@ -155,18 +155,18 @@
                 <input type="submit" class="send" value='SEND'>
             </form>
         </section>
-        <section class="settings">
+        <section class="settings" id='settings'>
             <h2>SETTINGS</h2>
             <form class='settings-form'>
                 <p>Send Email Notifications</p>
                 <div class="switch">
-                    <input type='checkbox'>
+                    <input type='checkbox' class='notifications' name='notifications' value='notOn'>
                     <label class='on'>ON</label>
                     <label class='off'>OFF</label>
                 </div>
                 <p>Set Profile to Public</p>
                 <div class="switch">
-                    <input type='checkbox'>
+                    <input type='checkbox' class='public' name='public' value='pubOn'>
                     <label class='on'>ON</label>
                     <label class='off'>OFF</label>
                 </div>
@@ -217,6 +217,8 @@
             <div class="settings-btns">
                 <button class="save">SAVE</button>
                 <button class="cancel">CANCEL</button>
+
+                
             </div>   
         </section>
     </main>

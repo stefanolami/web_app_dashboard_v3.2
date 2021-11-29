@@ -234,13 +234,53 @@ searchList.addEventListener('click', (e) => {
 
 
 
-/* submit.addEventListener('click', () => {
+submit.addEventListener('click', () => {
     const messageDiv = document.createElement('div');
     messageDiv.className = 'alert';
     if (message.value && members.includes(userSearch.value)) {
-        
+        alert('Your message was sent!')
     } else {
         alert('You need to select a user and write a message')
     }
 })
- */
+
+
+/* settings */
+
+const notifications = document.querySelector('.notifications');
+const public = document.querySelector('.public');
+const timezone = document.querySelector('.timezones');
+const save = document.querySelector('.save');
+const cancel = document.querySelector('.cancel');
+
+function getSettings() {
+    notifications.checked = localStorage.getItem(notifications.name) === 'true' ? true:false;
+    public.checked = localStorage.getItem(public.name) === 'true' ? true:false;
+    timezone.value = localStorage.getItem(timezone.name);
+}
+
+getSettings();
+
+save.addEventListener('click', (e) => {
+    if (notifications.checked) {
+        localStorage.setItem(notifications.name, notifications.checked);
+    } else {
+        localStorage.setItem(notifications.name, false);
+    }
+
+    if (public.checked) {
+        localStorage.setItem(public.name, public.checked);
+    } else {
+        localStorage.setItem(public.name, false);
+    }
+
+    localStorage.setItem(timezone.name, timezone.value);
+
+})
+
+cancel.addEventListener('click', (e) => {
+    localStorage.removeItem(notifications.name);
+    localStorage.removeItem(public.name);
+    localStorage.removeItem(timezone.name);
+    location.reload();
+})
